@@ -1,0 +1,17 @@
+{
+  "name": "adventofcode_2023",
+  "version": "1.0.0",
+  "description": "",
+  "main": "Day1.js",
+  "scripts": {
+    "tsc:watch": "tsc -p . --watch",
+    "dev:node": "node --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/node": "^20.10.3",
+    "typescript": "^5.3.2"
+  }
+}

@@ -16,7 +16,7 @@ const part1 = (input: string): number => {
       .reduce<boolean>((isRoundValid, round) => {
         return (
           isRoundValid &&
-          round.split(",").reduce((isRollValid, roll) => {
+          round.split(",").reduce<boolean>((isRollValid, roll) => {
             const [count, color] = roll.trim().split(" ");
             return isRollValid && mapColorToMaxCount[color] >= parseInt(count);
           }, true)

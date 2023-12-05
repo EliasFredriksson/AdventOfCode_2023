@@ -1,10 +1,10 @@
-### Advent of Code 2023
+# Advent of Code 2023
 
 Here are my solutions for Advent of Code 2023!
 
 ---
 
-Setup:
+### Setup:
 
 - Clone project
 - Run `npm i`

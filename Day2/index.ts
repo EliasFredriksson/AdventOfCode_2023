@@ -34,14 +34,14 @@ const part2 = (input: string): number => {
     const { red, green, blue } = rounds
       .split(";")
       .reduce<Record<string, number>>(
-        (minimum, round) => {
+        (minimumNeeded, round) => {
           round.split(",").some((roll) => {
             const [count, color] = roll.trim().split(" ");
-            if (parseInt(count) > minimum[color]) {
-              minimum[color] = parseInt(count);
+            if (parseInt(count) > minimumNeeded[color]) {
+              minimumNeeded[color] = parseInt(count);
             }
           });
-          return minimum;
+          return minimumNeeded;
         },
         {
           red: 1,

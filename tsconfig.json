@@ -16,6 +16,7 @@
     "module": "NodeNext",
     /* If your code doesn't run in the DOM: */
     "lib": ["es2022"],
+    /* Additional types for third party */
     "types": ["@types/node"]
   }
 }

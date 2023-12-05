@@ -5,19 +5,7 @@ type Digits = {
   last: number;
 };
 
-const DIGIT_NAMES = [
-  "one",
-  "two",
-  "three",
-  "four",
-  "five",
-  "six",
-  "seven",
-  "eight",
-  "nine",
-] as const;
-
-const mapDigitNameToDigit: Record<(typeof DIGIT_NAMES)[number], number> = {
+const mapDigitNameToDigit: Record<string, number> = {
   one: 1,
   two: 2,
   three: 3,
@@ -31,9 +19,12 @@ const mapDigitNameToDigit: Record<(typeof DIGIT_NAMES)[number], number> = {
 
 const convertDigitNamesToNumbers = (inputRow: string): string => {
   return inputRow.split("").reduce((currentRowCharacters, character) => {
-    const parsedRow = DIGIT_NAMES.reduce<string>((currentRow, digit) => {
-      return currentRow.replaceAll(digit, `${mapDigitNameToDigit[digit]}`);
-    }, currentRowCharacters);
+    const parsedRow = Object.keys(mapDigitNameToDigit).reduce<string>(
+      (currentRow, digit) => {
+        return currentRow.replaceAll(digit, `${mapDigitNameToDigit[digit]}`);
+      },
+      currentRowCharacters
+    );
     return parsedRow + character;
   }, "");
 };

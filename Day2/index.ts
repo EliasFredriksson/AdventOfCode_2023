@@ -37,7 +37,7 @@ const part2 = (input: string): number => {
         (minimum, round) => {
           round.split(",").some((roll) => {
             const [count, color] = roll.trim().split(" ");
-            if (minimum[color] < parseInt(count)) {
+            if (parseInt(count) > minimum[color]) {
               minimum[color] = parseInt(count);
             }
           });

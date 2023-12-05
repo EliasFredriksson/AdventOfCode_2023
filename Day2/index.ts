@@ -6,12 +6,6 @@ const mapColorToMaxCount: Record<string, number> = {
   blue: 14,
 };
 
-type MinimumNeededPerColor = {
-  red: number;
-  green: number;
-  blue: number;
-};
-
 const part1 = (input: string): number => {
   const rows = input.split("\r\n");
   return rows.reduce<number>((idTotal, row) => {

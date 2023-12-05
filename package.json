@@ -4,8 +4,8 @@
   "description": "",
   "main": "Day1.js",
   "scripts": {
-    "tsc:watch": "tsc -p . --watch",
-    "dev:node": "node --watch"
+    "watch": "tsc -p . --watch",
+    "dev": "node --watch"
   },
   "keywords": [],
   "author": "",

@@ -35,7 +35,7 @@ const part2 = (input: string): number => {
       .split(";")
       .reduce<Record<string, number>>(
         (minimumNeeded, round) => {
-          round.split(",").some((roll) => {
+          round.split(",").forEach((roll) => {
             const [count, color] = roll.trim().split(" ");
             if (parseInt(count) > minimumNeeded[color]) {
               minimumNeeded[color] = parseInt(count);

@@ -84,17 +84,9 @@ const part1 = (input: string) => {
             charsOfPartNumber,
             data
           );
-          console.log({
-            MAX_X,
-            MAX_Y,
-            charsOfPartNumber,
-            adjecentPositions,
-          });
-
           const hasSymbol = adjecentPositions.some((pos) => {
             return SYMBOLS.includes(data[pos.y][pos.x]);
           });
-
           if (hasSymbol) totalSumOfParts += parseInt(charsOfPartNumber);
           charOffset = charsOfPartNumber.length;
         }

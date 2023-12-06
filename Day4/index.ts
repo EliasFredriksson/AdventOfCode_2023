@@ -18,7 +18,7 @@ const part1 = (input: string): number => {
   }, 0);
 };
 
-const part2 = (input: string) => {
+const part2 = (input: string): number => {
   const cards = input.split("\r\n");
   const cardsRecord = cards.reduce<Record<string, CardRecord>>(
     (record, card) => {
@@ -33,7 +33,6 @@ const part2 = (input: string) => {
     },
     {}
   );
-
   Object.keys(cardsRecord).forEach((cardNumber) => {
     const cardRaw = cardsRecord[cardNumber].card.split(":");
     const raw = cardRaw[1].trim().split("|");
@@ -49,7 +48,6 @@ const part2 = (input: string) => {
       cardsRecord[num].count += 1 * currentCount;
     });
   });
-
   return Object.values(cardsRecord).reduce((total, card) => {
     return total + card.count;
   }, 0);

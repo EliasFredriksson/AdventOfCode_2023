@@ -59,12 +59,11 @@ const getAdjecent = (pos: Pos, partNumber: string, data: string[][]): Pos[] => {
 
 const isDigit = (char: string): boolean => DIGITS.includes(char);
 
-const part1 = (input: string) => {
+const part1 = (input: string): number => {
   const data = input.split("\r\n").map((row) => row.split(""));
   const MAX_X = data[0].length;
   const MAX_Y = data.length;
   const SYMBOLS = getSymbols(input);
-
   let totalSumOfParts = 0;
   let charOffset = 0;
   for (let y = 0; y < MAX_Y; y++) {
@@ -95,7 +94,6 @@ const part1 = (input: string) => {
       }
     }
   }
-
   return totalSumOfParts;
 };
 
